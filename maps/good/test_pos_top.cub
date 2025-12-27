@@ -1,0 +1,21 @@
+NO textures/school/north.xpm
+SO textures/school/south.xpm
+WE textures/school/west.xpm
+EA textures/school/east.xpm
+
+F 20,20,20
+C 200,200,200
+
+111
+1N1
+101
+101
+101
+101
+101
+101
+101
+101
+101
+101
+111
