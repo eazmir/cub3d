@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 10:15:08 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:26:46 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 13:17:45 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ bool	ft_check_file_extntion(char *file)
 	while (file[i])
 	{
 		if (ft_strlen(excub) == 4 && ft_strcmp(excub, ".cub") == 0)
-		{
 			return (true);
-		}
 		else
 			return (false);
 		i++;
@@ -48,6 +46,11 @@ bool	ft_check_status_file(char *file)
 		if (!ft_check_file_exist(file))
 		{
 			error("file does not exist");
+			return (false);
+		}
+		else if (ft_strlen(file) <= 4)
+		{
+			error("Invalid file name");
 			return (false);
 		}
 		else if (!ft_check_file_extntion(file))

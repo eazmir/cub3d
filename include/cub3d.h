@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eazmir <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/27 13:29:09 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/27 13:29:21 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 13:48:06 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,5 @@ typedef struct s_game
 }				t_game;
 
 int				start(int ac, char **args, t_game *game);
-void			cleanup_game(t_game *game);
-
+void			clean_up(t_game *game);
 #endif

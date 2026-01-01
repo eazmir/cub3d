@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:23:08 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:23:10 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 14:07:23 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ int	init_render(t_game *game)
 	game->render->tex_west.img = NULL;
 	init_player(game);
 	if (!load_textures(game))
-		cleanup_game(game);
+		clean_up(game);
 	return (1);
 }

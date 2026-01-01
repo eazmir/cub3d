@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:24:51 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:24:53 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 19:28:53 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ void	error(char *str)
 
 int	ft_check_eorr(char **map, int height, int width)
 {
-	if (ft_check_close_walls(map, height, width) == 0)
-	{
-		error("map must be surrounded by walls");
-		return (0);
-	}
-	else if (ft_check_characters(map, height, width) == 0)
+	if (ft_check_characters(map, height, width) == 0)
 	{
 		error("map contains invalid characters");
+		return (0);
+	}
+	else if (ft_check_close_walls(map, height, width) == 0)
+	{
+		error("map must be surrounded by walls");
 		return (0);
 	}
 	else if (ft_check_space_on_map(map, height, width) == 0)

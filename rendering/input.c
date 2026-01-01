@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:23:16 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:23:18 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 15:53:50 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,8 @@ int	key_hook(int keycode, t_game *game)
 	return (0);
 }
 
-int	exit_game(t_game *game)
+int	clean_resource(t_game *game)
 {
-	if (game->win)
-		mlx_destroy_window(game->mlx, game->win);
 	if (game->render)
 	{
 		if (game->render->img.img)
@@ -49,6 +47,12 @@ int	exit_game(t_game *game)
 		if (game->render->tex_west.img)
 			mlx_destroy_image(game->mlx, game->render->tex_west.img);
 	}
-	exit(0);
+	if (game->win)
+		mlx_destroy_window(game->mlx, game->win);
+	if (game->mlx)
+	{
+		mlx_destroy_display(game->mlx);
+		free(game->mlx);
+	}
 	return (0);
 }

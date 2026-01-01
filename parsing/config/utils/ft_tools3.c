@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:26:02 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:26:06 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 18:37:59 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	**ft_cp2d(t_cub *game, char **src, int height)
 
 	if (is_map_empty(src))
 	{
-		error("the map is empty");
+		error("the file is empty");
 		return (NULL);
 	}
 	get_map_bounds(src, height, &start, &end);

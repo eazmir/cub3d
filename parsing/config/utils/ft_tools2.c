@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 09:31:23 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/10 00:00:04 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 19:33:33 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_invalid_space(char **map_copy, int i, int j, int height)
 	if (j < 0)
 		return (1);
 	if (j >= (int)ft_strlen(map_copy[i]))
-		return (0);
+		return (1);
 	if (map_copy[i][j] == '1' || map_copy[i][j] == 'V')
 		return (0);
 	if (map_copy[i][j] == ' ' || map_copy[i][j] == '\t')

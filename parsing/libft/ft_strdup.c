@@ -3,14 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eazmir <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 21:12:52 by eazmir            #+#    #+#             */
-/*   Updated: 2024/11/20 22:38:02 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 12:59:55 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../parsing/parsing.h"
 #include "libft.h"
 
 // char	*ft_strdup(const char *s)

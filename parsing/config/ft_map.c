@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:24:57 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:24:59 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 19:32:20 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,7 +111,7 @@ int	ft_check_space_on_map(char **map, int height, int width)
 	cop_map = get_copy(map, height);
 	while (i < height)
 	{
-		width = ft_strlen(cop_map[i]);
+		width = ft_strlen(map[i]);
 		j = 0;
 		while (j < width && cop_map[i][j])
 		{

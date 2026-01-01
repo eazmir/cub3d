@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:24:11 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:24:12 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/01 14:03:29 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 
 static int	init_game_struct(t_game **game)
 {
-	*game = malloc(sizeof(t_game));
-	if (!*game)
-		return (0);
 	(*game)->mlx = mlx_init();
 	if (!(*game)->mlx)
 	{
@@ -46,12 +43,12 @@ int	main(int argc, char *argv[])
 {
 	t_game	*game;
 
+	game = ft_malloc(sizeof(t_game), 1);
+	ft_memset(game, 0, sizeof(t_game));
+	if (!start(argc, argv, game))
+		return (0);
 	if (!init_game_struct(&game))
 		return (0);
-	if (!start(argc, argv, game))
-	{
-		return (0);
-	}
 	if (!init_render(game))
 	{
 		printf("Error\nFailed to initialize rendering\n");

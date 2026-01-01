@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:22:30 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:22:33 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 15:46:26 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 void	calculate_wall_distance(t_game *game, t_ray *ray)
 {
 	if (ray->side == 0)
-		ray->perp_wall_dist = (ray->map_x - game->render->player.pos_x
-				+ (1 - ray->step_x) / 2) / ray->ray_dir_x;
+		ray->perp_wall_dist = (ray->map_x - game->render->player.pos_x + (1
+					- ray->step_x) / 2) / ray->ray_dir_x;
 	else
-		ray->perp_wall_dist = (ray->map_y - game->render->player.pos_y
-				+ (1 - ray->step_y) / 2) / ray->ray_dir_y;
+		ray->perp_wall_dist = (ray->map_y - game->render->player.pos_y + (1
+					- ray->step_y) / 2) / ray->ray_dir_y;
 	ray->line_height = (int)(WIN_HEIGHT / ray->perp_wall_dist);
 	ray->draw_start = -ray->line_height / 2 + WIN_HEIGHT / 2;
 	if (ray->draw_start < 0)
@@ -32,11 +32,11 @@ void	calculate_wall_distance(t_game *game, t_ray *ray)
 void	calculate_texture_x(t_game *game, t_ray *ray)
 {
 	if (ray->side == 0)
-		ray->wall_x = game->render->player.pos_y
-			+ ray->perp_wall_dist * ray->ray_dir_y;
+		ray->wall_x = game->render->player.pos_y + ray->perp_wall_dist
+			* ray->ray_dir_y;
 	else
-		ray->wall_x = game->render->player.pos_x
-			+ ray->perp_wall_dist * ray->ray_dir_x;
+		ray->wall_x = game->render->player.pos_x + ray->perp_wall_dist
+			* ray->ray_dir_x;
 	ray->wall_x -= floor(ray->wall_x);
 	ray->tex_x = (int)(ray->wall_x * (double)TEX_WIDTH);
 	if (ray->side == 0 && ray->ray_dir_x > 0)

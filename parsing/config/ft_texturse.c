@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 15:44:23 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/10 00:22:08 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 11:06:20 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_parse_txtrse(char *path, t_texturse *txt)
 	return (NULL);
 }
 
-int	force_checker(char **s, int height)
+int	ft_missing_texture(char **s, int height)
 {
 	int		i;
 	char	*p;
@@ -59,7 +59,7 @@ int	force_checker(char **s, int height)
 		c++;
 		i++;
 	}
-	return (1);
+	return (c == 4);
 }
 
 int	ft_check_mltple_txtrse(char **maps, int height)
@@ -71,8 +71,6 @@ int	ft_check_mltple_txtrse(char **maps, int height)
 	if (!maps[0] || !maps)
 		return (0);
 	ft_memset(c, 0, sizeof(c));
-	if (!force_checker(maps, height))
-		return (-1);
 	i = 0;
 	while (i < height)
 	{
@@ -116,9 +114,9 @@ int	ft_check_txt_isvald(t_cub *game, t_texturse *txt)
 	txt_count = 0;
 	while (txt1[txt_count])
 		txt_count++;
-	if (ft_check_mltple_txtrse(txt1, txt_count) == -1)
-		return (-1);
 	if (!ft_check_mltple_txtrse(txt1, txt_count))
+		return (-1);
+	if (!ft_missing_texture(txt1, txt_count))
 		return (0);
 	p = ft_parse_txt_from_map(txt, txt1, txt_count);
 	if (!ft_validate_texture_format(p))

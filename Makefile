@@ -9,20 +9,20 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = cub3D
 
 SRC = main.c \
-	cleanup.c \
-	rendering/init.c \
-	rendering/rendering.c \
-	rendering/input.c \
-	rendering/utils.c \
-	rendering/ray_init.c \
-	rendering/dda.c \
-	rendering/dda_utils.c \
-	rendering/draw.c \
-	rendering/movement.c \
-	rendering/rotation.c \
-	rendering/collision.c \
-	rendering/player_dir.c \
-	rendering/floor_ceiling.c
+        cleanup.c \
+        rendering/init.c \
+        rendering/rendering.c \
+        rendering/input.c \
+        rendering/utils.c \
+        rendering/ray_init.c \
+        rendering/dda.c \
+        rendering/dda_utils.c \
+        rendering/draw.c \
+        rendering/movement.c \
+        rendering/rotation.c \
+        rendering/collision.c \
+        rendering/player_dir.c \
+        rendering/floor_ceiling.c
 
 OBJ = $(SRC:.c=.o)
 

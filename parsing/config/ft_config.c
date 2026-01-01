@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/23 07:42:03 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/09 23:21:28 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 18:34:23 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,8 @@ void	the_end(t_cub *game, t_texturse *txt)
 		exit(0);
 	}
 	pos_player = ft_get_position(game->grid, game->height, game->width);
-	game->player_x = pos_player[0];
-	game->player_y = pos_player[1];
+	game->player_x = pos_player[1];
+	game->player_y = pos_player[0];
 }
 
 int	init_game(t_cub **game, t_texturse **txt, char *file)

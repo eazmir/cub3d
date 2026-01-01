@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:25:51 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:25:53 by eazmir           ###   ########.fr       */
+/*   Updated: 2025/12/30 10:12:25 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,12 +97,12 @@ int	ft_checker3(char *line)
 
 int	ft_force_checker(char *s)
 {
-	if (!s || !s[0])
+	if (!s || !s[0] || !s[1])
 		return (0);
 	if (ft_strncmp(s, "NO", 2) == 0 || ft_strncmp(s, "SO", 2) == 0
 		|| ft_strncmp(s, "WE", 2) == 0 || ft_strncmp(s, "EA", 2) == 0)
 	{
-		if (s[2] == ' ' || s[2] == '\t')
+		if (s[2] && (s[2] == ' ' || s[2] == '\t'))
 			return (1);
 		return (0);
 	}
