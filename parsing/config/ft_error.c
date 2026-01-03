@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:24:51 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/30 19:28:53 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/02 11:37:01 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_check_eorr(char **map, int height, int width)
 		error("Map contains invalid spaces");
 		return (0);
 	}
-	else if (check_trailing_map_content(map, height) == 0)
+	else if (!check_trailing_map_content(map, height))
 	{
 		error("Map has disconnected sections or trailing content");
 		return (0);

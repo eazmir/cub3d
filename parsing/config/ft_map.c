@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:24:57 by eazmir            #+#    #+#             */
-/*   Updated: 2026/01/01 19:32:20 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/03 16:59:35 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,8 @@ int	ft_check_space_on_map(char **map, int height, int width)
 		j = 0;
 		while (j < width && cop_map[i][j])
 		{
-			if (cop_map[i][j] == 'N' || cop_map[i][j] == '0'
-				|| cop_map[i][j] == 'S' || cop_map[i][j] == 'E'
-				|| cop_map[i][j] == 'W')
+			if (cop_map[i][j] == 'N' || cop_map[i][j] == 'S'
+					|| cop_map[i][j] == 'E' || cop_map[i][j] == 'W')
 			{
 				if (is_invalid_space(cop_map, i, j, height))
 					return (0);

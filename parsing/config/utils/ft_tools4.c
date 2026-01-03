@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 13:43:09 by eazmir            #+#    #+#             */
-/*   Updated: 2026/01/01 15:26:54 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/03 15:16:48 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,29 +30,65 @@ int	get_map_width(char **map)
 	return (max_width);
 }
 
+int	get_content_bounds(char *line, int *first, int *last)
+{
+	int	j;
+
+	*first = -1;
+	*last = -1;
+	j = 0;
+	while (line[j])
+	{
+		if (is_map_content(line[j]))
+		{
+			if (*first == -1)
+				*first = j;
+			*last = j;
+		}
+		j++;
+	}
+	return (*first != -1);
+}
+
+int	ft_check_single_line(char *line, int first, int last)
+{
+	int	j;
+	int	k;
+	int	gap_size;
+
+	j = first;
+	while (j <= last)
+	{
+		if (line[j] == ' ' || line[j] == '\t')
+		{
+			gap_size = 0;
+			k = j;
+			while (k <= last && (line[k] == ' ' || line[k] == '\t'))
+			{
+				gap_size++;
+				k++;
+			}
+			if (gap_size > 2 && k <= last && is_map_content(line[k]))
+				return (0);
+		}
+		j++;
+	}
+	return (1);
+}
+
 int	check_trailing_map_content(char **map, int height)
 {
 	int	i;
-	int	j;
-	int	found_end;
+	int	first_valid;
+	int	last_valid;
 
 	i = 0;
 	while (i < height)
 	{
-		j = 0;
-		found_end = 0;
-		while (map[i][j])
+		if (get_content_bounds(map[i], &first_valid, &last_valid))
 		{
-			if (found_end && (map[i][j] == '1' || map[i][j] == '0'))
+			if (!ft_check_single_line(map[i], first_valid, last_valid))
 				return (0);
-			if (map[i][j] != '1' && map[i][j] != '0' && map[i][j] != 'N'
-				&& map[i][j] != 'S' && map[i][j] != 'E' && map[i][j] != 'W'
-				&& map[i][j] != ' ' && map[i][j] != '\t' && map[i][j] != '\n')
-				return (1);
-			if ((map[i][j] == ' ' || map[i][j] == '\t') && j > 0 && (map[i][j
-					- 1] == '1' || map[i][j - 1] == '0'))
-				found_end = 1;
-			j++;
 		}
 		i++;
 	}
@@ -84,31 +120,5 @@ int	check_color_duplicate(char **maps, int height)
 	}
 	if (c != 1 || f != 1)
 		return (0);
-	return (1);
-}
-
-int	ft_count_color(char **rgb)
-{
-	int	c;
-
-	if (!rgb)
-		return (0);
-	c = 0;
-	while (rgb[c])
-		c++;
-	return (c);
-}
-
-int	ft_check_empty_values(char **rgb)
-{
-	int	i;
-
-	i = 0;
-	while (rgb[i])
-	{
-		if (rgb[i][0] == '\0')
-			return (0);
-		i++;
-	}
 	return (1);
 }

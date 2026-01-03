@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_game.c                                       :+:      :+:    :+:   */
+/*   ft_tools5.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 11:10:52 by eazmir            #+#    #+#             */
-/*   Updated: 2026/01/03 16:57:38 by eazmir           ###   ########.fr       */
+/*   Created: 2026/01/03 11:22:56 by eazmir            #+#    #+#             */
+/*   Updated: 2026/01/03 16:54:48 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "debug/debug.h"
-#include "include/parsing.h"
-
-int	start(int ac, char **args, t_game *game)
+int	ft_check_empty_values(char **rgb)
 {
-	t_cub		*cub;
-	t_texturse	*txt;
+	int	i;
 
-	if (ac != 2)
+	i = 0;
+	while (rgb[i])
 	{
-		printf("Usage: ./cub <map_file.cub>\n");
-		ft_malloc(0, 0);
-		return (0);
+		if (rgb[i][0] == '\0')
+			return (0);
+		i++;
 	}
-	if (!init_game(&cub, &txt, args[1]))
-	{
-		ft_malloc(0, 0);
-		return (0);
-	}
-	game->cub = cub;
-	game->txt = txt;
 	return (1);
+}
+
+int	ft_count_color(char **rgb)
+{
+	int	c;
+
+	if (!rgb)
+		return (0);
+	c = 0;
+	while (rgb[c])
+		c++;
+	return (c);
+}
+
+int	is_map_content(char c)
+{
+	return (c == '1' || c == '0' || c == 'N' || c == 'S' || c == 'E'
+		|| c == 'W');
 }

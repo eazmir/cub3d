@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 11:51:13 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/09 23:21:29 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/02 10:18:14 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,6 @@ int	is_texture_line(char *line)
 	return (ft_strncmp(line, "NO", 2) == 0 || ft_strncmp(line, "SO", 2) == 0
 		|| ft_strncmp(line, "WE", 2) == 0 || ft_strncmp(line, "EA", 2) == 0
 		|| ft_strncmp(line, "F", 1) == 0 || ft_strncmp(line, "C", 1) == 0);
-}
-
-int	is_texture_definition(char *line)
-{
-	if (!line)
-		return (0);
-	while (*line && ft_isspace(*line))
-		line++;
-	return (ft_strncmp(line, "NO", 2) == 0 || ft_strncmp(line, "SO", 2) == 0
-		|| ft_strncmp(line, "WE", 2) == 0 || ft_strncmp(line, "EA", 2) == 0);
 }
 
 int	is_map_line(char *line)

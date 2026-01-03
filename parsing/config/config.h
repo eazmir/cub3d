@@ -6,7 +6,7 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:25:36 by eazmir            #+#    #+#             */
-/*   Updated: 2026/01/01 19:31:59 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/03 11:25:28 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int			ft_count_color(char **rgb);
 int			check_trailing_map_content(char **map, int height);
 int			check_color_duplicate(char **maps, int height);
 int			ft_missing_path(char *p);
+int			is_map_content(char c);
 int			is_key_followed_by_space_or_end(char **maps, int i, int j,
 				char key);
 char		*ft_parse_txtrse(char *path, t_texturse *txt);

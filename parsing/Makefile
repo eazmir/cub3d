@@ -23,6 +23,7 @@ SRC = \
 	$(UTILS_DIR)/ft_tools1.c\
 	$(UTILS_DIR)/ft_tools2.c\
 	$(UTILS_DIR)/ft_tools4.c\
+	$(UTILS_DIR)/ft_tools5.c\
 	$(UTILS_DIR)/ft_utils3.c\
 	$(UTILS_DIR)/ft_tools3.c\
 	$(UTILS_DIR)/ft_utils4.c\
