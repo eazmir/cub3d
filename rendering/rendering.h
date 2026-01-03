@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 08:23:46 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/30 15:05:25 by eazmir           ###   ########.fr       */
+/*   Created: 2026/01/03 17:33:56 by eazmir            #+#    #+#             */
+/*   Updated: 2026/01/03 17:34:00 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ void			render(t_game *game);
 void			raycast(t_game *game);
 void			draw_column(t_game *game, t_ray *ray, int x);
 void			draw_floor_ceiling(t_game *game);
+int				expose_hook(t_game *game);
 
 /* Ray calculations */
 void			init_ray(t_game *game, t_ray *ray, int x);

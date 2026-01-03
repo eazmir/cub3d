@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/28 08:24:11 by eazmir            #+#    #+#             */
-/*   Updated: 2026/01/01 19:51:44 by eazmir           ###   ########.fr       */
+/*   Created: 2026/01/03 17:35:51 by eazmir            #+#    #+#             */
+/*   Updated: 2026/01/03 18:15:38 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ static void	setup_hooks(t_game *game)
 {
 	mlx_hook(game->win, 2, 1L << 0, key_hook, game);
 	mlx_hook(game->win, 17, 0, exit_game, game);
+	mlx_hook(game->win, 12, 1L << 15, expose_hook, game);
 }
 
 int	main(int argc, char *argv[])

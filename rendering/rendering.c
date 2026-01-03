@@ -6,11 +6,17 @@
 /*   By: eazmir <eazmir@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/28 08:23:39 by eazmir            #+#    #+#             */
-/*   Updated: 2025/12/28 08:23:42 by eazmir           ###   ########.fr       */
+/*   Updated: 2026/01/03 17:31:24 by eazmir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rendering.h"
+
+int	expose_hook(t_game *game)
+{
+	render(game);
+	return (0);
+}
 
 void	raycast(t_game *game)
 {
